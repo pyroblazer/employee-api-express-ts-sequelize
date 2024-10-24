@@ -1,0 +1,809 @@
+{
+	"info": {
+		"_postman_id": "56dfce32-b8a4-40d1-b61f-5b59622ab091",
+		"name": "Data Kepegawaian API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9283446"
+	},
+	"item": [
+		{
+			"name": "Get Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nik\": \"123456789\",\r\n  \"name\": \"John Doe\",\r\n  \"is_active\": true,\r\n  \"start_date\": \"2020-01-01\",\r\n  \"end_date\": \"2023-12-31\", \r\n  \"created_by\": \"admin\",\r\n  \"updated_by\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nik\": \"123456789\",\r\n  \"name\": \"John Doe2\",\r\n  \"is_active\": true,\r\n  \"start_date\": \"2020-01-01\",\r\n  \"end_date\": \"2023-12-31\", \r\n  \"created_by\": \"admin\",\r\n  \"updated_by\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employees Data with Relations (Profile, Family, & Education)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Data by Id with Relations (Profile, Family, & Education)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/data/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						"data",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee Data with Relations (Profile, Family, & Education)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employeeData\": {\r\n    \"nik\": \"123456\",\r\n    \"name\": \"John Doe\",\r\n    \"is_active\": true,\r\n    \"start_date\": \"2024-01-01\",\r\n    \"end_date\": \"2024-01-02\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\"\r\n  },\r\n  \"profileData\": {\r\n    \"place_of_birth\": \"City A\",\r\n    \"date_of_birth\": \"1990-01-01\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": false,\r\n    \"prof_pict\": \"profile_pic_url\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\"\r\n  },\r\n  \"familyData\": [\r\n    {\r\n      \"name\": \"Jane Doe\",\r\n      \"identifier\": \"Spouse\",\r\n      \"job\": \"Engineer\",\r\n      \"place_of_birth\": \"City B\",\r\n      \"date_of_birth\": \"1992-01-01\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false,\r\n      \"relation_status\": \"Istri\",\r\n      \"created_by\": \"admin\",\r\n      \"updated_by\": \"admin\"\r\n    }\r\n  ],\r\n  \"educationData\": [\r\n    {\r\n      \"name\": \"University X\",\r\n      \"level\": \"Strata 1\",\r\n      \"description\": \"Bachelor of Science in Engineering\",\r\n      \"created_by\": \"admin\",\r\n      \"updated_by\": \"admin\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee Data with Relations (Profile, Family, & Education)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employeeData\": {\r\n    \"nik\": \"123456\",\r\n    \"name\": \"John Doe2\",\r\n    \"is_active\": true,\r\n    \"start_date\": \"2024-01-01\",\r\n    \"end_date\": \"2024-01-03\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\"\r\n  },\r\n  \"profileData\": {\r\n    \"place_of_birth\": \"City AB\",\r\n    \"date_of_birth\": \"1990-01-02\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": false,\r\n    \"prof_pict\": \"profile_pic_url\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\"\r\n  },\r\n  \"familyData\": [\r\n    {\r\n      \"name\": \"Jane Doe\",\r\n      \"identifier\": \"Spouse\",\r\n      \"job\": \"Engineer\",\r\n      \"place_of_birth\": \"City B\",\r\n      \"date_of_birth\": \"1992-01-01\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": true,\r\n      \"relation_status\": \"Istri\",\r\n      \"created_by\": \"admin\",\r\n      \"updated_by\": \"admin\"\r\n    }\r\n  ],\r\n  \"educationData\": [\r\n    {\r\n      \"name\": \"University X\",\r\n      \"level\": \"Strata 2\",\r\n      \"description\": \"Master of Science in Engineering\",\r\n      \"created_by\": \"admin\",\r\n      \"updated_by\": \"admin\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/data/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						"data",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee Data with Relations (Profile, Family, Education)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/data/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						"data",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Educations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/educations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"educations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Education by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/educations/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"educations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Education",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employee_id\": 4,\r\n  \"name\": \"Bachelor of Science\",\r\n  \"level\": \"Strata 1\",\r\n  \"description\": \"Completed a degree in Computer Science\",\r\n  \"created_by\": \"admin\",\r\n  \"updated_by\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/educations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"educations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Education by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employee_id\": 1,\r\n    \"name\": \"Bachelor of Science\",\r\n    \"level\": \"Strata 2\",\r\n    \"description\": \"Completed a masters degree in Computer Science\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/educations/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"educations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Education by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/educations/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"educations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Families",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-families",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-families"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Family by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-families/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-families",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee Family",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employee_id\": 1, \r\n  \"name\": \"Jane Doe\",\r\n  \"identifier\": \"123456789\",\r\n  \"job\": \"Teacher\",\r\n  \"place_of_birth\": \"Cityville\",\r\n  \"date_of_birth\": \"1990-01-01\",\r\n  \"religion\": \"Katolik\",\r\n  \"is_life\": true,\r\n  \"is_divorced\": false,\r\n  \"relation_status\": \"Istri\",\r\n  \"created_by\": \"admin\",\r\n  \"updated_by\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-families",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-families"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee Family by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employee_id\": 1,\r\n    \"name\": \"Jane Doe2\",\r\n    \"identifier\": \"123456789\",\r\n    \"job\": \"Teacher\",\r\n    \"place_of_birth\": \"Cityville\",\r\n    \"date_of_birth\": \"1990-01-01T00:00:00.000Z\",\r\n    \"religion\": \"Katolik\",\r\n    \"is_life\": true,\r\n    \"is_divorced\": false,\r\n    \"relation_status\": \"Istri\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-families/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-families",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee Family by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-families/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-families",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-profiles",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Profile by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-profiles/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-profiles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employee_id\": 1,\r\n  \"place_of_birth\": \"Jakarta\",\r\n  \"date_of_birth\": \"1990-01-01\",\r\n  \"gender\": \"Laki-Laki\",\r\n  \"is_married\": false,\r\n  \"prof_pict\": \"http://example.com/profile.jpg\",\r\n  \"created_by\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-profiles",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee Profile by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"place_of_birth\": \"Bandung\",\r\n  \"date_of_birth\": \"1990-01-01\",\r\n  \"gender\": \"Perempuan\",\r\n  \"is_married\": true,\r\n  \"prof_pict\": \"http://example.com/new_profile.jpg\",\r\n  \"updated_by\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-profiles/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-profiles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee Profile by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employee-profiles/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee-profiles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Reports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/employees/reports",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employees",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

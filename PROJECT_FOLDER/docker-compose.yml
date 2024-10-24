@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: data_kepegawaian
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      PROD_DB_USERNAME: postgres
+      PROD_DB_PASSWORD: password
+      PROD_DB_DATABASE: data_kepegawaian
+      PROD_DB_HOST: db
+      PROD_DB_PORT: 5432
+      PROD_DB_DIALECT: postgres
+      PROD_DB_SSL_REQUIRE: false
+      PROD_DB_SSL_REJECT_UNAUTHORIZED: false
+    depends_on:
+      - db
+
+volumes:
+  db-data:
